@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{29C57EB1-435B-1163-3140-148C7F2A37E2}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "FirstFPS",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
