@@ -53,7 +53,7 @@ void AFPSObjectiveActor::NotifyActorBeginOverlap(AActor * OtherActor)
 	if (OtherActor)
 	{
 		Player = Cast<AFirstFPSCharacter>(OtherActor);
-		//Player->IsCarryingObject = true;
+		Player->IsCarryingObject = true;
 		GEngine->AddOnScreenDebugMessage(-1,3.f,FColor::Red,FString::Printf(TEXT("Pick.... ")));
 		Destroy();
 	}

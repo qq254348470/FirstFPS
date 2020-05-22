@@ -8,6 +8,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Logging/LogMacros.h"
 
+
 // Sets default values
 ABlackHoleActor::ABlackHoleActor()
 {

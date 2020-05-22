@@ -13,6 +13,13 @@ class AFirstFPSGameMode : public AGameModeBase
 
 public:
 	AFirstFPSGameMode();
+	void GameEnd(APawn* Pawn);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = GM_Successed)
+		void GM_Successed(APawn* Pawn);
+
+	UPROPERTY(EditDefaultsOnly, Category = CameraActor)
+		TSubclassOf<AActor> CameraActor;
 };
 
 
