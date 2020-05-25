@@ -18,13 +18,13 @@ AFirstFPSGameMode::AFirstFPSGameMode()
 	HUDClass = AFirstFPSHUD::StaticClass();
 }
 
-void AFirstFPSGameMode::GameEnd(APawn* Pawn)
+void AFirstFPSGameMode::GameEnd(APawn* Pawn,bool Success)
 {
 	if (Pawn)
 	{
 		Pawn->DisableInput(nullptr);
 		UE_LOG(LogTemp, Error, TEXT("GM : %s"), *UKismetSystemLibrary::GetObjectName(Pawn));
-		GM_Successed(Pawn);
+		GM_Successed(Pawn,Success);
 		if (CameraActor)
 		{
 			AActor* NewCamer;

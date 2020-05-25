@@ -10,7 +10,9 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
+#include "Components/PawnNoiseEmitterComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
+
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -82,6 +84,8 @@ AFirstFPSCharacter::AFirstFPSCharacter()
 
 	// Uncomment the following line to turn motion controllers on by default:
 	//bUsingMotionControllers = true;
+
+	NoiseEmitterComp = CreateDefaultSubobject<UPawnNoiseEmitterComponent>(TEXT("NoiseEmitter"));
 }
 
 void AFirstFPSCharacter::BeginPlay()
@@ -151,6 +155,8 @@ void AFirstFPSCharacter::OnFire()
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
 				World->SpawnActor<AFirstFPSProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				
+
 			}
 			else
 			{
@@ -161,7 +167,7 @@ void AFirstFPSCharacter::OnFire()
 				//Set Spawn Collision Handling Override
 				FActorSpawnParameters ActorSpawnParams;
 				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
-
+				ActorSpawnParams.Instigator = this;
 				// spawn the projectile at the muzzle
 				World->SpawnActor<AFirstFPSProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 			}

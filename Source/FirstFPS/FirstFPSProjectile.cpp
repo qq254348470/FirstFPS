@@ -5,6 +5,7 @@
 #include "Components/SphereComponent.h"
 #include "Kismet/GameplayStatics.h"
 
+
 AFirstFPSProjectile::AFirstFPSProjectile() 
 {
 	// Use a sphere as a simple collision representation
@@ -39,8 +40,10 @@ void AFirstFPSProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Boom,GetActorLocation());
-		Destroy();
+		
 	}
+	MakeNoise(1, Instigator);
+	Destroy();
 	
 
 }

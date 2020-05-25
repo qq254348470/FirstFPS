@@ -43,7 +43,7 @@ void AFPSExtractionZone::HandOverLap(UPrimitiveComponent* OverlappedComponent,AA
 			AFirstFPSGameMode *GM = Cast<AFirstFPSGameMode>(GetWorld()->GetAuthGameMode());
 			if (GM)
 			{
-				GM->GameEnd(Player);
+				GM->GameEnd(Player,true);
 			}
 		}
 		else
