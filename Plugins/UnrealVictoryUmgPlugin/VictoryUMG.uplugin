@@ -1,0 +1,31 @@
+{
+  "Comment":"这里添加了注释，接下来是插件的各种配置文件，包含引擎版本，作者信息，加载时机，支持平台等等", 
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Victory UMG",
+  "Description": "Rama's UMG Widgets for You!",
+  "Category": "Victory Plugin",
+  "CreatedBy": "Rama",
+  "CreatedByURL": "https://forums.unrealengine.com/showthread.php?299-Wiki-Code-Tutorials",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "",
+  "EnabledByDefault": true,
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": true,
+  "RequiresBuildPlatform": false,
+  "Modules": [
+    {
+      "Name": "VictoryUMG",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault",
+      "WhitelistPlatforms": [
+        "Win64",
+        "Win32",
+        "HTML5"
+      ]
+    }
+  ]
+}
